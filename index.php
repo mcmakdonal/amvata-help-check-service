@@ -217,7 +217,7 @@
                                         <tr>
                                             <td><?php echo $val['name'] ?></td>
                                             <td><?php echo $val['endpoint'] ?></td>
-                                            <td><?php echo (!empty($val['http_status']) && $val['http_status'] == 200 ) ? "OK" : json_encode($val["response"]); ?></td>
+                                            <td style="word-break: break-all;"><?php echo (!empty($val['http_status']) && $val['http_status'] == 200 ) ? "OK" : json_encode($val["response"]); ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
