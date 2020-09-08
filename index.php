@@ -159,6 +159,19 @@
         return (json_last_error() == JSON_ERROR_NONE);
     }
 
+	function DateThai($strDate)
+	{
+		$strYear = date("Y",strtotime($strDate))+543;
+		$strMonth= date("n",strtotime($strDate));
+		$strDay= date("j",strtotime($strDate));
+		$strHour= date("H",strtotime($strDate));
+		$strMinute= date("i",strtotime($strDate));
+		$strSeconds= date("s",strtotime($strDate));
+		$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+		$strMonthThai=$strMonthCut[$strMonth];
+		return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
+	}
+
     foreach ($services as $type => $service_args) {
         foreach ($service_args as $k => $_service) {
             foreach ($_service as $kk => $service) {
@@ -193,11 +206,11 @@
     // print_r($services);
     // echo "</pre>";
     date_default_timezone_set("Asia/Bangkok");
-    $datetime = date("Y-m-d h:i:sa");
+    $datetime = date("Y-m-d h:i:s");
     ?>
 
     <div class="container">
-        <h1>Help Check Amvata Status : <?php echo $datetime; ?></h1>
+        <h1>Help Check Amvata Status : <?php echo DateThai($datetime); ?></h1>
         <div class="row">
             <?php foreach ($services as $key => $service) : ?>
             <div class="col-sm-12">
