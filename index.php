@@ -206,7 +206,7 @@
     // print_r($services);
     // echo "</pre>";
     date_default_timezone_set("Asia/Bangkok");
-    $datetime = date("Y-m-d h:i:s");
+    $datetime = date("Y-m-d H:i:s");
     ?>
 
     <div class="container">
