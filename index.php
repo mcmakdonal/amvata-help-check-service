@@ -192,10 +192,12 @@
     // echo "<pre>";
     // print_r($services);
     // echo "</pre>";
+    date_default_timezone_set("Asia/Bangkok");
+    $datetime = date("Y-m-d h:i:sa");
     ?>
 
     <div class="container">
-        <h1>Help Check Amvata Status</h1>
+        <h1>Help Check Amvata Status : <?php echo $datetime; ?></h1>
         <div class="row">
             <?php foreach ($services as $key => $service) : ?>
             <div class="col-sm-12">
